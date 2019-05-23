@@ -8,7 +8,7 @@ import pandas as pd
 import sys
 
 if len(sys.argv) != 6:
-    print('Usage: python redeem_codes.py twitter_user_name twitter_password desired_awards reward_codes_file_path element_load_timeout')
+    print('Usage: python redeem_codes.py twitter_user_name twitter_password desired_rewards reward_codes_file_path element_load_timeout')
     sys.exit(1)
 
 # Configurable parameters
