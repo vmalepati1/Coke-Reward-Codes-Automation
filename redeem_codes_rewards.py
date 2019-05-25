@@ -103,8 +103,8 @@ with open(reward_codes_file_path) as csv_file:
             # Brief pause between each entry to allow the page to process previous input
             time.sleep(5)
             
-            try:          
-                error_text = driver.find_element_by_xpath(error_text_xpath).text
+            try:
+                error_text = wait_for_element_to_load(error_text_xpath).text
 
                 if error_text == 'Please enter a valid code.':
                     log_writer.writerow([code, 'invalid'])
