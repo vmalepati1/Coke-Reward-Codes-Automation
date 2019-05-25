@@ -9,7 +9,7 @@ import csv
 import time
 
 if len(sys.argv) != 7:
-    print('Usage: python redeem_codes.py twitter_user_name twitter_password desired_rewards reward_codes_file_path log_file_path element_load_timeout')
+    print('Usage: python redeem_codes_rewards.py twitter_user_name twitter_password desired_rewards reward_codes_file_path log_file_path element_load_timeout')
     sys.exit(1)
 
 # Configurable parameters
