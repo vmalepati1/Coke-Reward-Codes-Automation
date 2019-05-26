@@ -47,6 +47,7 @@ and `element_load_timeout` is the maximum time required for an HTML element to l
 
 ### Example Usage
 `python redeem_codes.py test hello123 Dominos,AMCTheaters example_data/reward_codes.csv example_data/log.csv 10`
+
 `python redeem_codes_school.py test hello123 "Walton High School, 30062" example_data/reward_codes.csv example_data/log.csv 10`
 
 ## Prerequisites
