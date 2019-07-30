@@ -59,11 +59,11 @@ driver.switch_to.window(main_window_handle)
 # Wait for main page to load again
 time.sleep(10)
 
-school_input_button = wait_for_element_to_load('//*[@id="_4c66e458-3fa1-4d80-910c-25b635f5066f_pageContent_responsivecolumncont_395902480_column0_donation_4c4b"]/div[1]/div/div[2]/div[2]/div/div[1]/span')
+school_input_button = wait_for_element_to_load('//*[@id="_ec90261d-8d17-4704-8568-40d8860ee886_pageContent_responsivecolumncont_395902480_column0_donation_4c4b"]/div[1]/div/div[2]/div[2]/div/div[1]/span')
 
 school_input_button.click()
 
-school_input_box = wait_for_element_to_load('//*[@id="_4c66e458-3fa1-4d80-910c-25b635f5066f_pageContent_responsivecolumncont_395902480_column0_donation_4c4b"]/div[1]/div/div[2]/div[2]/div/input[1]')
+school_input_box = wait_for_element_to_load('//*[@id="_ec90261d-8d17-4704-8568-40d8860ee886_pageContent_responsivecolumncont_395902480_column0_donation_4c4b"]/div[1]/div/div[2]/div[2]/div/input[1]')
 
 school_input_box.send_keys(school_name)
 school_input_box.send_keys(Keys.ENTER)
@@ -93,13 +93,13 @@ with open(reward_codes_file_path) as csv_file:
             code_input_box.send_keys(code)
             code_input_box.submit()
             # Brief pause between each entry to allow the page to process previous input
-            time.sleep(5)
+            time.sleep(2)
             try:
-                error_text = wait_for_element_to_load('//*[@id="_4c66e458-3fa1-4d80-910c-25b635f5066f_pageContent_responsivecolumncont_395902480_column0_donation_4c4b"]/p').text
+                error_text = wait_for_element_to_load('//*[@id="_ec90261d-8d17-4704-8568-40d8860ee886_pageContent_responsivecolumncont_395902480_column0_donation_4c4b"]/p').text
                 
-                if error_text == 'Sorry this code is invalid. Please try another alphanumeric Coca-Cola product code.':
+                if 'invalid' in error_text:
                     log_writer.writerow([code, 'invalid'])
-                elif error_text == 'OOPS! This code has already been redeemed. Keep drinking Coca-Cola branded products to donate.':
+                elif 'has already been redeemed' in error_text:
                     log_writer.writerow([code, 'already_redeemed'])
                 else:
                     # Weird case scenario
